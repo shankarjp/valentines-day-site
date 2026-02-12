@@ -8,16 +8,37 @@
   <body>
     <h1>Our Love Sounds Like 💕</h1>
 
+    <!-- Song Image Display -->
+    <div class="song-display">
+      <img id="songImage" src="assets/default.jpg" alt="Song Memory" />
+      <p id="songTitle">Click a song to play 💖</p>
+    </div>
+
+    <!-- Playlist -->
     <div class="playlist">
-      <div class="song" onclick="playSong('assets/song1.mp3')">
-        🎵 Song 1 - Our Beginning
+      <div
+        class="song"
+        onclick="playSong('assets/blue.mp3', 'assets/blue.jpg', 'blue')"
+      >
+        🎵 blue
       </div>
 
-      <div class="song" onclick="playSong('assets/song2.mp3')">
-        🎵 Song 2 - Forever With You
+      <div
+        class="song"
+        onclick="playSong('assets/teenagedream.mp3', 'assets/teenagedream.jpg', 'teenage dream')"
+      >
+        🎵 teenage dream
+      </div>
+
+      <div
+        class="song"
+        onclick="playSong('assets/yellowpaperdaisy.mp3', 'assets/yellowpaperdaisy.png', 'yellow paper daisy')"
+      >
+        🎵 yellow paper daisy
       </div>
     </div>
 
+    <!-- Audio Player -->
     <audio id="player" controls></audio>
 
     <script src="gift1.js"></script>

@@ -2,34 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Our Memories Map 💕</title>
+    <title>Our Love Map 💖</title>
     <link rel="stylesheet" href="gift3.css" />
   </head>
   <body>
-    <h1>Places We’ll Remember Forever 🗺️</h1>
+    <h1>Our Love Map 🗺️💕</h1>
+    <p>Every pin is a memory, every place is you.</p>
 
-    <div class="map-container">
-      <img src="assets/india_map.png" class="map" />
+    <div id="map-wrapper">
+      <!-- Use YOUR SVG -->
+      <img src="assets/in.svg" id="india-map" />
 
-      <div
-        class="pin"
-        style="top: 60%; left: 40%"
-        onclick="showPopup('Goa', '12 Jan 2025', 'Beach sunset together 💖', 'assets/photo_goa.jpg')"
-      ></div>
-
-      <div
-        class="pin"
-        style="top: 45%; left: 50%"
-        onclick="showPopup('Ooty', '22 Feb 2025', 'Cold mornings + hot tea ☕', 'assets/photo_ooty.jpg')"
-      ></div>
+      <!-- Pins Overlay -->
+      <div id="pins-layer"></div>
     </div>
 
-    <div id="popup" class="popup">
-      <span onclick="closePopup()">✖</span>
-      <h2 id="place"></h2>
-      <p id="date"></p>
-      <p id="desc"></p>
-      <img id="photo" />
+    <!-- Popup -->
+    <div id="popup" class="popup hidden">
+      <img id="popup-img" />
+      <h2 id="popup-title"></h2>
+      <p id="popup-desc"></p>
+      <button onclick="closePopup()">Close 💗</button>
     </div>
 
     <script src="gift3.js"></script>
