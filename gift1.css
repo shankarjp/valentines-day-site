@@ -1,0 +1,28 @@
+body {
+  font-family: Poppins;
+  background: #fff0f6;
+  text-align: center;
+}
+
+h1 {
+  margin: 30px;
+  color: #ff2e88;
+}
+
+.playlist {
+  width: 400px;
+  margin: auto;
+}
+
+.song {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.song:hover {
+  transform: scale(1.05);
+}

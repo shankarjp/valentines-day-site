@@ -1,0 +1,44 @@
+body {
+  font-family: Poppins;
+  background: #fff0f6;
+  text-align: center;
+}
+
+.map-container {
+  position: relative;
+  width: 600px;
+  margin: auto;
+}
+
+.map {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.pin {
+  width: 18px;
+  height: 18px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  width: 320px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.popup img {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+}

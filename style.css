@@ -20,6 +20,12 @@ body {
 h1 {
   font-size: 2.5rem;
   color: #ff2e88;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ff4d88;
   margin-bottom: 40px;
 }
 
@@ -54,5 +60,4 @@ button {
   color: #ff4d88;
   border: 2px solid #ff4d88;
   position: relative;
-  transition: transform 0.3s ease;
 }
