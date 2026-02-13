@@ -115,7 +115,7 @@ const places = [
     lon: 79.33,
     date: "Aug 2025",
     img: "assets/swamimalai.jpeg",
-    desc: "Hertiage vacation 💫",
+    desc: "Heritage vacation 💫",
   },
   {
     name: "Madurai, Tamil Nadu",
