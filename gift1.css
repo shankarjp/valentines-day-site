@@ -9,6 +9,36 @@ h1 {
   color: #ff2e88;
 }
 
+/* Song Display Box */
+.song-display {
+  width: 350px;
+  margin: 0 auto 40px auto;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Image Fix */
+.song-display img {
+  width: 100%;
+  max-width: 300px; /* prevents huge images */
+  max-height: 250px; /* keeps height controlled */
+  object-fit: contain; /* maintains aspect ratio */
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+  transition: 0.3s ease;
+}
+
+/* Song Title */
+.song-display p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #ff4d88;
+}
+
+/* Playlist */
 .playlist {
   width: 400px;
   margin: auto;
@@ -21,6 +51,7 @@ h1 {
   border-radius: 15px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.25s ease;
 }
 
 .song:hover {
