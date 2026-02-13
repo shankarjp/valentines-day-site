@@ -1,6 +1,6 @@
 /***********************
   💖 Our Love Map Pins
-  Fixed + Calibrated
+  With Dates + Popup
 ************************/
 
 /* All Places */
@@ -9,55 +9,63 @@ const places = [
     name: "Ooty, Tamil Nadu",
     lat: 11.21,
     lon: 76.5,
+    date: "May 2024",
     img: "assets/ooty.jpeg",
-    desc: "Hill station magic 💕",
+    desc: "Love at first sight 💖",
   },
   {
     name: "Mysore, Karnataka",
     lat: 12.3,
     lon: 76.65,
+    date: "July 2024",
     img: "assets/mysore.jpeg",
-    desc: "Palaces & peace ✨",
+    desc: "First Trip ✨",
   },
   {
     name: "Bangalore, Karnataka",
     lat: 12.97,
     lon: 77.59,
+    date: "Jan 2025",
     img: "assets/bangalore.jpeg",
-    desc: "Where everything began 💖",
+    desc: "Home sweet home 💕",
   },
   {
     name: "Varkala, Kerala",
     lat: 8.73,
     lon: 76.41,
+    date: "Nov 2024",
     img: "assets/varkala.jpeg",
-    desc: "Cliff beaches forever 🌊",
+    desc: "Juicy Cafe vibes 🌊",
   },
   {
     name: "Tumkur, Karnataka",
     lat: 13.34,
     lon: 77.1,
+    date: "Jan 2025",
     img: "assets/tumkur.jpeg",
-    desc: "Sweet memories ❤️",
+    desc: "New Year together ❤️",
   },
   {
     name: "Hampi, Karnataka",
     lat: 15.34,
     lon: 76.46,
+    date: "Jan 2025",
     img: "assets/hampi.jpeg",
-    desc: "History + us 🏛️",
+    desc: "OG Adventure Trip 🏛️",
   },
   {
     name: "Coorg, Karnataka",
     lat: 12.42,
     lon: 75.74,
+    date: "Feb 2025",
     img: "assets/coorg.jpeg",
-    desc: "Coffee hills ☕💗",
+    desc: "Civet Coffee and Wine ☕🍷",
   },
   {
     name: "Udaipur, Rajasthan",
     lat: 25.0,
     lon: 72.78,
+    date: "Mar 2025",
     img: "assets/udaipur.jpeg",
     desc: "City of lakes 💙",
   },
@@ -65,6 +73,7 @@ const places = [
     name: "Jaipur, Rajasthan",
     lat: 27.91,
     lon: 75.79,
+    date: "Mar 2025",
     img: "assets/jaipur.jpeg",
     desc: "Pink city romance 🌸",
   },
@@ -72,64 +81,73 @@ const places = [
     name: "Agra, Uttar Pradesh",
     lat: 28.18,
     lon: 78.02,
+    date: "Mar 2025",
     img: "assets/agra.jpeg",
-    desc: "Taj Mahal vibes 🤍",
+    desc: "Taj Mahal 🤍",
   },
   {
     name: "Erode, Tamil Nadu",
     lat: 11.34,
     lon: 77.72,
+    date: "Mar 2025",
     img: "assets/erode.jpeg",
-    desc: "Hometown warmth 💕",
+    desc: "Sneaky Dates 💕",
   },
   {
     name: "Gokarna, Karnataka",
     lat: 14.25,
     lon: 73.72,
+    date: "May 2025",
     img: "assets/gokarna.jpeg",
-    desc: "Quiet beach paradise 🌴",
+    desc: "Seafood and Sunsets 🌴",
   },
   {
     name: "Trichy, Tamil Nadu",
     lat: 10.79,
     lon: 78.7,
+    date: "July 2025",
     img: "assets/trichy.jpeg",
-    desc: "Temple city magic 🛕",
+    desc: "Our new home 🏠",
   },
   {
     name: "Swamimalai, Tamil Nadu",
     lat: 10.95,
     lon: 79.33,
+    date: "Aug 2025",
     img: "assets/swamimalai.jpeg",
-    desc: "Sacred memories 💫",
+    desc: "Hertiage vacation 💫",
   },
   {
     name: "Madurai, Tamil Nadu",
     lat: 9.93,
     lon: 78.12,
-    img: "assets/madurai.jpg",
-    desc: "City of jasmine 🌺",
+    date: "Aug 2025",
+    img: "assets/madurai.jpeg",
+    desc: "Crab Omlete and Mutton Chops ftw 🍖",
   },
   {
     name: "Tranquebar, Tamil Nadu",
     lat: 11.03,
     lon: 79.95,
+    date: "Sept 2025",
     img: "assets/tranquebar.jpeg",
-    desc: "Seaside peace 🌅",
+    desc: "Seaside paradise 🌅",
   },
   {
     name: "Pondicherry, Tamil Nadu",
     lat: 11.94,
     lon: 80.2,
+    date: "Oct 2025",
     img: "assets/pondicherry.jpeg",
-    desc: "French love vibes 🇫🇷",
+    desc: "Matri Mandir fan club 🇫🇷",
   },
   {
     name: "Goa, Goa",
     lat: 15.49,
     lon: 73.12,
+    date: "Dec 2025",
     img: "assets/goa.jpg",
-    desc: "Beach love forever 🌊",
+    desc: "Hilton Honors 🌊",
   },
 ];
 
@@ -144,8 +162,7 @@ const geoBounds = {
 };
 
 /***********************
-   ✅ SVG Calibration Fix
-   (India occupies center of SVG)
+   ✅ SVG Calibration Box
 ************************/
 const indiaBox = {
   left: 0.18,
@@ -167,15 +184,10 @@ function latLonToXY(lat, lon) {
   const width = map.clientWidth;
   const height = map.clientHeight;
 
-  // Normalize longitude (0 → 1)
   let xNorm = (lon - geoBounds.west) / (geoBounds.east - geoBounds.west);
-
-  // Normalize latitude (0 → 1)
   let yNorm = (geoBounds.north - lat) / (geoBounds.north - geoBounds.south);
 
-  // Apply calibration box
   let x = (indiaBox.left + xNorm * (indiaBox.right - indiaBox.left)) * width;
-
   let y = (indiaBox.top + yNorm * (indiaBox.bottom - indiaBox.top)) * height;
 
   return { x, y };
@@ -187,9 +199,9 @@ function latLonToXY(lat, lon) {
 function loadPins() {
   pinsLayer.innerHTML = "";
 
-  // Global shift for all pins
-  const offsetX = -20; // LEFT
-  const offsetY = 30; // DOWN
+  // Global shift
+  const offsetX = -20;
+  const offsetY = 30;
 
   places.forEach((place) => {
     const pin = document.createElement("div");
@@ -197,7 +209,6 @@ function loadPins() {
 
     const pos = latLonToXY(place.lat, place.lon);
 
-    // Apply global offset
     pin.style.left = `${pos.x + offsetX}px`;
     pin.style.top = `${pos.y + offsetY}px`;
 
@@ -214,6 +225,7 @@ function showPopup(place) {
   document.getElementById("popup").classList.remove("hidden");
 
   document.getElementById("popup-title").innerText = place.name;
+  document.getElementById("popup-date").innerText = place.date;
   document.getElementById("popup-desc").innerText = place.desc;
   document.getElementById("popup-img").src = place.img;
 }

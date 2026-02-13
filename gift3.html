@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Our Love Map 💖</title>
     <link rel="stylesheet" href="gift3.css" />
   </head>
+
   <body>
     <h1>Our Love Map 🗺️💕</h1>
     <p>Every pin is a memory, every place is you.</p>
 
     <div id="map-wrapper">
-      <!-- Use YOUR SVG -->
+      <!-- India SVG Map -->
       <img src="assets/in.svg" id="india-map" />
 
       <!-- Pins Overlay -->
@@ -20,8 +21,14 @@
     <!-- Popup -->
     <div id="popup" class="popup hidden">
       <img id="popup-img" />
+
       <h2 id="popup-title"></h2>
+
+      <!-- ✅ Date Added -->
+      <p id="popup-date" class="popup-date"></p>
+
       <p id="popup-desc"></p>
+
       <button onclick="closePopup()">Close 💗</button>
     </div>
 

@@ -10,6 +10,7 @@ h1 {
   color: #ff2e88;
 }
 
+/* Map Wrapper */
 #map-wrapper {
   width: 650px;
   margin: 40px auto;
@@ -28,23 +29,24 @@ h1 {
   inset: 0;
 }
 
-/* Pin Style */
+/* ✅ Heart Pin Style */
 .pin {
   position: absolute;
-  width: 14px;
-  height: 14px;
-  background: hotpink;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+  font-size: 12px;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 0, 120, 0.75);
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.pin::before {
+  content: "❤️";
 }
 
 .pin:hover {
   transform: translate(-50%, -50%) scale(1.6);
 }
 
-/* Popup */
+/* Popup Box */
 .popup {
   position: fixed;
   top: 50%;
@@ -58,11 +60,33 @@ h1 {
   z-index: 999;
 }
 
+/* Popup Image */
 .popup img {
   width: 100%;
   border-radius: 15px;
 }
 
+/* ✅ Date Styling */
+.popup-date {
+  font-size: 1rem;
+  color: #ff4d88;
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+/* Hidden Popup */
 .hidden {
   display: none;
+}
+
+.popup h2 {
+  margin: 8px 0 4px 0; /* smaller gap */
+}
+
+.popup-date {
+  margin: 4px 0 6px 0; /* reduce date spacing */
+}
+
+.popup p {
+  margin: 6px 0; /* description tighter */
 }
